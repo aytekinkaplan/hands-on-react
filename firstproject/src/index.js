@@ -78,49 +78,7 @@ import ReactDOM from "react-dom/client";
 
 // root.render(<Greeting />);
 
-const bookListStyle = {
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "center",
-  gap: "20px",
-  padding: "20px",
-};
-
-const containerStyle = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  backgroundColor: "#ffffff",
-  border: "1px solid #ddd",
-  borderRadius: "8px",
-  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-  padding: "20px",
-  margin: "20px",
-  width: "250px",
-  transition: "transform 0.3s",
-};
-
-const containerHoverStyle = {
-  transform: "scale(1.05)",
-};
-
-const imgStyle = {
-  maxWidth: "100%",
-  borderRadius: "4px",
-  marginBottom: "15px",
-};
-
-const h3Style = {
-  color: "#333",
-  fontSize: "1.2rem",
-  margin: "10px 0",
-};
-
-const pStyle = {
-  color: "#555",
-  fontSize: "0.9rem",
-  margin: "5px 0",
-};
+import "./index.css"; // Import the CSS file
 
 const BookList = () => {
   const listForBooks = {
@@ -187,7 +145,7 @@ const BookList = () => {
   };
 
   return (
-    <div style={bookListStyle}>
+    <div className="book-list">
       {Object.values(listForBooks).map((book, index) => (
         <Book
           key={index}
@@ -203,16 +161,15 @@ const BookList = () => {
 
 const Book = (props) => {
   return (
-    <div
-      style={{
-        ...containerStyle,
-        ...(props.isHovered ? containerHoverStyle : {}),
-      }}
-    >
-      <img style={imgStyle} src={props.addresOfImg} alt={props.forBookName} />
-      <h3 style={h3Style}>{props.forBookName}</h3>
-      <p style={pStyle}>Author: {props.forAuthor}</p>
-      <p style={pStyle}>Price: {props.forPrice}</p>
+    <div className="book-container">
+      <img
+        className="book-img"
+        src={props.addresOfImg}
+        alt={props.forBookName}
+      />
+      <h3 className="book-title">{props.forBookName}</h3>
+      <p className="book-details">Author: {props.forAuthor}</p>
+      <p className="book-details">Price: {props.forPrice}</p>
     </div>
   );
 };

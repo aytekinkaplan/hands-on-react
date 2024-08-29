@@ -1,0 +1,45 @@
+/* styles.css */
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 250px;
+  transition: transform 0.3s;
+}
+
+.book-container:hover {
+  transform: scale(1.05);
+}
+
+.book-img {
+  max-width: 100%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.book-title {
+  color: #333;
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.book-details {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 5px 0;
+}
